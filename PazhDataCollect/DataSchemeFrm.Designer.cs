@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbRemote = new System.Windows.Forms.GroupBox();
             this.dgRemoteAdd = new System.Windows.Forms.DataGridView();
             this.dgRemote = new System.Windows.Forms.DataGridView();
@@ -45,15 +45,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLocal = new System.Windows.Forms.Button();
             this.cbLocal = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtLocalSQL = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.cbDateField = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.chbDate = new System.Windows.Forms.CheckBox();
             this.chbFormatDate = new System.Windows.Forms.CheckBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtDate = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgSQLView = new System.Windows.Forms.DataGridView();
@@ -67,6 +64,9 @@
             this.txtShopName = new System.Windows.Forms.TextBox();
             this.dgLocalAdd = new System.Windows.Forms.DataGridView();
             this.dgLocal = new System.Windows.Forms.DataGridView();
+            this.btnSQLOutlet = new System.Windows.Forms.Button();
+            this.txtLocalSQL = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbRemote.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRemoteAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgRemote)).BeginInit();
@@ -101,23 +101,23 @@
             this.dgRemoteAdd.AllowUserToOrderColumns = true;
             this.dgRemoteAdd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgRemoteAdd.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 7F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgRemoteAdd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgRemoteAdd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgRemoteAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgRemoteAdd.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgRemoteAdd.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgRemoteAdd.Location = new System.Drawing.Point(6, 306);
             this.dgRemoteAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgRemoteAdd.Name = "dgRemoteAdd";
@@ -134,14 +134,14 @@
             this.dgRemote.AllowUserToOrderColumns = true;
             this.dgRemote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgRemote.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgRemote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgRemote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgRemote.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgRemote.Location = new System.Drawing.Point(6, 101);
             this.dgRemote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -242,36 +242,6 @@
             this.cbLocal.Size = new System.Drawing.Size(173, 21);
             this.cbLocal.TabIndex = 6;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(771, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "SQL Query مربوط به برداشت ";
-            // 
-            // txtLocalSQL
-            // 
-            this.txtLocalSQL.Location = new System.Drawing.Point(680, 110);
-            this.txtLocalSQL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtLocalSQL.Multiline = true;
-            this.txtLocalSQL.Name = "txtLocalSQL";
-            this.txtLocalSQL.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtLocalSQL.Size = new System.Drawing.Size(368, 118);
-            this.txtLocalSQL.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(755, 34);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(222, 34);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "<تبدیل به دستور SQL ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(755, 496);
@@ -287,18 +257,18 @@
             // 
             this.cbDateField.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.cbDateField.FormattingEnabled = true;
-            this.cbDateField.Location = new System.Drawing.Point(755, 383);
+            this.cbDateField.Location = new System.Drawing.Point(742, 167);
             this.cbDateField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbDateField.Name = "cbDateField";
             this.cbDateField.Size = new System.Drawing.Size(222, 21);
             this.cbDateField.TabIndex = 11;
-            this.cbDateField.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.cbDateField.Click += new System.EventHandler(this.comboBox1_Click);
+            this.cbDateField.SelectedIndexChanged += new System.EventHandler(this.cbDateField_SelectedIndexChanged);
+            this.cbDateField.Click += new System.EventHandler(this.cbDateField_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(988, 384);
+            this.label5.Location = new System.Drawing.Point(975, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 16);
             this.label5.TabIndex = 12;
@@ -307,7 +277,7 @@
             // chbDate
             // 
             this.chbDate.AutoSize = true;
-            this.chbDate.Location = new System.Drawing.Point(953, 439);
+            this.chbDate.Location = new System.Drawing.Point(940, 223);
             this.chbDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chbDate.Name = "chbDate";
             this.chbDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -319,7 +289,7 @@
             // chbFormatDate
             // 
             this.chbFormatDate.AutoSize = true;
-            this.chbFormatDate.Location = new System.Drawing.Point(814, 465);
+            this.chbFormatDate.Location = new System.Drawing.Point(801, 249);
             this.chbFormatDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chbFormatDate.Name = "chbFormatDate";
             this.chbFormatDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -328,19 +298,19 @@
             this.chbFormatDate.Text = "(YY/MM/DD)فرمت تاریخ هشت حرفی";
             this.chbFormatDate.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox1
+            // mtxtDate
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(834, 414);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maskedTextBox1.Mask = "000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(56, 23);
-            this.maskedTextBox1.TabIndex = 15;
+            this.mtxtDate.Location = new System.Drawing.Point(821, 198);
+            this.mtxtDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtxtDate.Mask = "000";
+            this.mtxtDate.Name = "mtxtDate";
+            this.mtxtDate.Size = new System.Drawing.Size(56, 23);
+            this.mtxtDate.TabIndex = 15;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(896, 416);
+            this.label6.Location = new System.Drawing.Point(883, 200);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(155, 16);
             this.label6.TabIndex = 16;
@@ -370,7 +340,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(969, 352);
+            this.label4.Location = new System.Drawing.Point(956, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 16);
             this.label4.TabIndex = 8;
@@ -378,14 +348,14 @@
             // 
             // txtLocalDB
             // 
-            this.txtLocalDB.Location = new System.Drawing.Point(802, 349);
+            this.txtLocalDB.Location = new System.Drawing.Point(789, 133);
             this.txtLocalDB.Name = "txtLocalDB";
             this.txtLocalDB.Size = new System.Drawing.Size(161, 23);
             this.txtLocalDB.TabIndex = 18;
             // 
             // txtRemoteDB
             // 
-            this.txtRemoteDB.Location = new System.Drawing.Point(802, 319);
+            this.txtRemoteDB.Location = new System.Drawing.Point(789, 103);
             this.txtRemoteDB.Name = "txtRemoteDB";
             this.txtRemoteDB.Size = new System.Drawing.Size(161, 23);
             this.txtRemoteDB.TabIndex = 20;
@@ -393,7 +363,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(969, 322);
+            this.label7.Location = new System.Drawing.Point(956, 106);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 16);
             this.label7.TabIndex = 19;
@@ -402,7 +372,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(923, 281);
+            this.label8.Location = new System.Drawing.Point(910, 65);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(134, 16);
             this.label8.TabIndex = 21;
@@ -411,7 +381,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(969, 247);
+            this.label9.Location = new System.Drawing.Point(956, 31);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 16);
             this.label9.TabIndex = 22;
@@ -420,7 +390,7 @@
             // txtShopID
             // 
             this.txtShopID.BackColor = System.Drawing.Color.Khaki;
-            this.txtShopID.Location = new System.Drawing.Point(755, 278);
+            this.txtShopID.Location = new System.Drawing.Point(742, 62);
             this.txtShopID.Name = "txtShopID";
             this.txtShopID.Size = new System.Drawing.Size(161, 23);
             this.txtShopID.TabIndex = 23;
@@ -428,7 +398,7 @@
             // txtShopName
             // 
             this.txtShopName.BackColor = System.Drawing.Color.Khaki;
-            this.txtShopName.Location = new System.Drawing.Point(802, 244);
+            this.txtShopName.Location = new System.Drawing.Point(789, 28);
             this.txtShopName.Name = "txtShopName";
             this.txtShopName.Size = new System.Drawing.Size(161, 23);
             this.txtShopName.TabIndex = 24;
@@ -440,23 +410,23 @@
             this.dgLocalAdd.AllowUserToOrderColumns = true;
             this.dgLocalAdd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgLocalAdd.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgLocalAdd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgLocalAdd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgLocalAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgLocalAdd.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgLocalAdd.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgLocalAdd.Location = new System.Drawing.Point(6, 306);
             this.dgLocalAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgLocalAdd.Name = "dgLocalAdd";
@@ -473,14 +443,14 @@
             this.dgLocal.AllowUserToOrderColumns = true;
             this.dgLocal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgLocal.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgLocal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgLocal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgLocal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgLocal.Location = new System.Drawing.Point(6, 101);
             this.dgLocal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -491,11 +461,44 @@
             this.dgLocal.TabIndex = 12;
             this.dgLocal.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgLocal_RowHeaderMouseDoubleClick);
             // 
+            // btnSQLOutlet
+            // 
+            this.btnSQLOutlet.Location = new System.Drawing.Point(755, 288);
+            this.btnSQLOutlet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSQLOutlet.Name = "btnSQLOutlet";
+            this.btnSQLOutlet.Size = new System.Drawing.Size(222, 34);
+            this.btnSQLOutlet.TabIndex = 27;
+            this.btnSQLOutlet.Text = "<تبدیل به دستور SQL ";
+            this.btnSQLOutlet.UseVisualStyleBackColor = true;
+            this.btnSQLOutlet.Click += new System.EventHandler(this.btnSQLOutlet_Click);
+            // 
+            // txtLocalSQL
+            // 
+            this.txtLocalSQL.Location = new System.Drawing.Point(680, 364);
+            this.txtLocalSQL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLocalSQL.Multiline = true;
+            this.txtLocalSQL.Name = "txtLocalSQL";
+            this.txtLocalSQL.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtLocalSQL.Size = new System.Drawing.Size(368, 118);
+            this.txtLocalSQL.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(771, 334);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 16);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "SQL Query مربوط به برداشت ";
+            // 
             // DataSchemeFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 733);
+            this.ClientSize = new System.Drawing.Size(1071, 754);
+            this.Controls.Add(this.btnSQLOutlet);
+            this.Controls.Add(this.txtLocalSQL);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtShopName);
             this.Controls.Add(this.txtShopID);
             this.Controls.Add(this.label9);
@@ -505,16 +508,13 @@
             this.Controls.Add(this.txtLocalDB);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mtxtDate);
             this.Controls.Add(this.chbFormatDate);
             this.Controls.Add(this.chbDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbDateField);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtLocalSQL);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.gbLocal);
             this.Controls.Add(this.gbRemote);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -549,15 +549,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLocal;
         private System.Windows.Forms.ComboBox cbLocal;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtLocalSQL;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cbDateField;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox chbDate;
         private System.Windows.Forms.CheckBox chbFormatDate;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtxtDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSQLView;
         private System.Windows.Forms.Panel panel1;
@@ -574,5 +571,8 @@
         private System.Windows.Forms.DataGridView dgRemoteAdd;
         private System.Windows.Forms.DataGridView dgLocalAdd;
         private System.Windows.Forms.DataGridView dgLocal;
+        private System.Windows.Forms.Button btnSQLOutlet;
+        private System.Windows.Forms.TextBox txtLocalSQL;
+        private System.Windows.Forms.Label label1;
     }
 }

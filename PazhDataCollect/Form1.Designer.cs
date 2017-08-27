@@ -180,9 +180,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PazhDataCollect.Properties.Resources.DST;
-            this.pictureBox2.Location = new System.Drawing.Point(983, 135);
+            this.pictureBox2.Location = new System.Drawing.Point(983, 130);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 109);
+            this.pictureBox2.Size = new System.Drawing.Size(47, 118);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
@@ -190,9 +190,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PazhDataCollect.Properties.Resources.SRC;
-            this.pictureBox1.Location = new System.Drawing.Point(987, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(984, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 115);
+            this.pictureBox1.Size = new System.Drawing.Size(44, 121);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;

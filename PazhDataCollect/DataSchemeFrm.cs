@@ -56,7 +56,7 @@ namespace PazhDataCollect
             {
                 chbFormatDate.CheckState = CheckState.Unchecked;
             }
-            maskedTextBox1.Text = Properties.Settings.Default.DaysBefore.ToString();
+            mtxtDate.Text = Properties.Settings.Default.DaysBefore.ToString();
             //chbDate.CheckState = CheckState.Unchecked;
         }
 
@@ -209,6 +209,54 @@ namespace PazhDataCollect
 
         }
 
+        private void btnSQLOutlet_Click(object sender, EventArgs e)
+        {
+            if (LocalAddTB.Rows.Count != RemoteAddTB.Rows.Count)
+            {
+                MessageBox.Show("باید تعداد ردیفهای جداول محلی و راه دور یکسان باشد");
+            }
+            else
+            {
+                int i = 0;
+                int count = RemoteAddTB.Rows.Count;
+                string txtSQL = null;
+                txtSQL += "SELECT N'" + txtShopName.Text + "' AS ShopName , N'" + txtShopID.Text + "' AS ShopID , ";
+                foreach (DataRow rw in RemoteAddTB.Rows)
+                {
+                    if (i < count - 1)
+                    {
+                        txtSQL += "CAST(" + LocalAddTB.Rows[i][0].ToString() + " AS " + RemoteAddTB.Rows[i][1].ToString() + "(" + RemoteAddTB.Rows[i][2] + ")) AS " + RemoteAddTB.Rows[i][0].ToString() + " , ";
+                    }
+                    else
+                    {
+                        txtSQL += "CAST(" + LocalAddTB.Rows[i][0].ToString() + " AS " + RemoteAddTB.Rows[i][1].ToString() + "(" + RemoteAddTB.Rows[i][2] + ")) AS " + RemoteAddTB.Rows[i][0].ToString();
+                    }
+                    i++;
+                }
+                txtSQL += " FROM " + cbLocal.Text + " WHERE " + cbDateField.Text + "='";
+                txtSQL += UT.FN_FormatDate(DateTime.Now.AddDays(-1 * Convert.ToInt32(mtxtDate.Text)), chbDate.Checked, chbFormatDate.Checked) + "'";
+                MessageBox.Show(txtSQL);
+                txtLocalSQL.Text = txtSQL;
+                txtLocalDB.Text = cbLocal.Text;
+                txtRemoteDB.Text = cbRemote.Text;
+            }
+        }
+
+        private void cbDateField_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void cbDateField_Click(object sender, EventArgs e)
+        {
+            cbDateField.Items.Clear();
+
+            foreach (DataRow rw in LocalAddTB.Rows)
+            {
+                cbDateField.Items.Add(rw[0].ToString());
+            }
+
+        }
+
         private void lbLocalAdded_DoubleClick(object sender, EventArgs e)
         {
         }
@@ -233,7 +281,7 @@ namespace PazhDataCollect
                 Properties.Settings.Default.Digitz8 = true;
             else
                 Properties.Settings.Default.Digitz8 = false;
-            Properties.Settings.Default.DaysBefore =Convert.ToInt32( maskedTextBox1.Text);
+            Properties.Settings.Default.DaysBefore =Convert.ToInt32( mtxtDate.Text);
             Properties.Settings.Default.ShopName = txtShopName.Text;
             Properties.Settings.Default.ShopID = txtShopID.Text;
             Properties.Settings.Default.Save();

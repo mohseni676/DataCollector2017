@@ -126,12 +126,12 @@ namespace PazhDataCollect
                 }
             }
         }
-        public string FN_FormatDate(DateTime date,bool IsShamsi,bool Is8DigitFormat)
+        public string FN_FormatDate(DateTime date,bool IsMiladi,bool Is8DigitFormat)
         {
             string Cdate = "";
             PersianCalendar CLD = new PersianCalendar();
             
-            if (IsShamsi == false)
+            if (IsMiladi == true)
             {
                 Cdate +=date.Year + "/" + date.Month.ToString().PadLeft(2,'0')+"/"+date.Day.ToString().PadLeft(2,'0');
             }else
