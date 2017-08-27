@@ -174,7 +174,14 @@ namespace PazhDataCollect
                     Copy.DestinationTableName = Properties.Settings.Default.RemoteDB;
 
                     //Column Mapping
-                    if (TB.Columns.Contains("ShopID"))
+
+                    foreach(DataColumn col in TB.Columns)
+                    {
+                        MessageBox.Show(col.ColumnName);
+                        Copy.ColumnMappings.Add(col.ColumnName, col.ColumnName);
+                    }
+
+                   /* if (TB.Columns.Contains("ShopID"))
                         Copy.ColumnMappings.Add("ShopID", "ShopID");
                     if (TB.Columns.Contains("ShopName"))
                         Copy.ColumnMappings.Add("ShopName", "ShopName");
@@ -201,9 +208,9 @@ namespace PazhDataCollect
                     if (TB.Columns.Contains("Fac_Discount"))
                         Copy.ColumnMappings.Add("Fac_Discount", "Fac_Discount");
                     if (TB.Columns.Contains("Fac_Total"))
-                        Copy.ColumnMappings.Add("Fac_Total", "Fac_Total");
+                        Copy.ColumnMappings.Add("Fac_Total", "Fac_Total");*/
                     //End Column Mapping
-                    MessageBox.Show(Copy.ColumnMappings[0].ToString());
+                    //MessageBox.Show(Copy.ColumnMappings.Cast<string>());
                     Copy.SqlRowsCopied +=
                     new SqlRowsCopiedEventHandler(OnSqlRowsCopied);
                     Copy.NotifyAfter = 10;
