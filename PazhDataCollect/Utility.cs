@@ -150,12 +150,13 @@ namespace PazhDataCollect
             string ShopName = Properties.Settings.Default.ShopName;
             string ShopID = Properties.Settings.Default.ShopID;
             string DateField = Properties.Settings.Default.DateField;
-
-            string Cdate = FN_FormatDate(DateTime.Now.AddDays(DaysBefore * -1), true, true);
+            bool isMialdi = Properties.Settings.Default.TarikhMiladi;
+            bool is8Digit = Properties.Settings.Default.Digitz8;
+            string Cdate = FN_FormatDate(DateTime.Now.AddDays(DaysBefore * -1), isMialdi, is8Digit);
             string DBtable = Properties.Settings.Default.LocalDB;
             string SQL = Properties.Settings.Default.LocalSQL;
-            SQL += ",N'" + ShopName + "' AS 'ShopName' , N'" + ShopID + "' AS 'ShopID' ";
-            SQL += " FROM " + DBtable;
+            //SQL += ",N'" + ShopName + "' AS 'ShopName' , N'" + ShopID + "' AS 'ShopID' ";
+            //SQL += " FROM " + DBtable;
             SQL += " WHERE " + DateField + ">'" + Cdate + "'";
             return SQL;
 

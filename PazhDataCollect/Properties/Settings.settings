@@ -35,8 +35,8 @@
     <Setting Name="DaysBefore" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="ShamsiDate" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+    <Setting Name="TarikhMiladi" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Digitz8" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

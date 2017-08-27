@@ -143,12 +143,17 @@ namespace PazhDataCollect
                 LCN.Open();
                 txtSQL.Text = UT.FN_GetQueryString();
 
-
-                using (SqlDataAdapter DT = new SqlDataAdapter(txtSQL.Text, LCN))
+                try
                 {
+                    using (SqlDataAdapter DT = new SqlDataAdapter(txtSQL.Text, LCN))
+                    {
 
-                    DT.Fill(TB);
-                    dgLocal.DataSource = TB;
+                        DT.Fill(TB);
+                        dgLocal.DataSource = TB;
+                    }
+                }catch (Exception err)
+                {
+                    MessageBox.Show("خطای اجرای Query : \r\n"+ err.Message +"\r\n"+err.HResult);
                 }
             }
 
@@ -161,7 +166,44 @@ namespace PazhDataCollect
                 LCN.Open();
                     using (SqlBulkCopy Copy = new SqlBulkCopy(LCN))
                 {
+
+
+
+
+
                     Copy.DestinationTableName = Properties.Settings.Default.RemoteDB;
+
+                    //Column Mapping
+                    if (TB.Columns.Contains("ShopID"))
+                        Copy.ColumnMappings.Add("ShopID", "ShopID");
+                    if (TB.Columns.Contains("ShopName"))
+                        Copy.ColumnMappings.Add("ShopName", "ShopName");
+                    if (TB.Columns.Contains("Fac_Serial"))
+                        Copy.ColumnMappings.Add("Fac_Serial", "Fac_Serial");
+                    if (TB.Columns.Contains("Fac_NO"))
+                        Copy.ColumnMappings.Add("Fac_NO", "Fac_NO");
+                    if (TB.Columns.Contains("RegDate"))
+                        Copy.ColumnMappings.Add("RegDate", "RegDate");
+                    if (TB.Columns.Contains("FacItem_Date"))
+                        Copy.ColumnMappings.Add("FacItem_Date", "FacItem_Date");
+                    if (TB.Columns.Contains("FacItem_Time"))
+                        Copy.ColumnMappings.Add("FacItem_Time", "FacItem_Time");
+                    if (TB.Columns.Contains("FacItem_ID"))
+                        Copy.ColumnMappings.Add("FacItem_ID", "FacItem_ID");
+                    if (TB.Columns.Contains("FacItem_Name"))
+                        Copy.ColumnMappings.Add("FacItem_Name", "FacItem_Name");
+                    if (TB.Columns.Contains("FacItem_Fee"))
+                        Copy.ColumnMappings.Add("FacItem_Fee", "FacItem_Fee");
+                    if (TB.Columns.Contains("FacItem_QT"))
+                        Copy.ColumnMappings.Add("FacItem_QT", "FacItem_QT");
+                    if (TB.Columns.Contains("FacItem_Discount"))
+                        Copy.ColumnMappings.Add("FacItem_Discount", "FacItem_Discount");
+                    if (TB.Columns.Contains("Fac_Discount"))
+                        Copy.ColumnMappings.Add("Fac_Discount", "Fac_Discount");
+                    if (TB.Columns.Contains("Fac_Total"))
+                        Copy.ColumnMappings.Add("Fac_Total", "Fac_Total");
+                    //End Column Mapping
+                    MessageBox.Show(Copy.ColumnMappings[0].ToString());
                     Copy.SqlRowsCopied +=
                     new SqlRowsCopiedEventHandler(OnSqlRowsCopied);
                     Copy.NotifyAfter = 10;

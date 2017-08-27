@@ -38,7 +38,7 @@ namespace PazhDataCollect
             txtRemoteDB.Text = Properties.Settings.Default.RemoteDB;
             txtShopName.Text = Properties.Settings.Default.ShopName;
             txtShopID.Text = Properties.Settings.Default.ShopID;
-            if (Properties.Settings.Default.ShamsiDate == true)
+            if (Properties.Settings.Default.TarikhMiladi == false)
             {
                // MessageBox.Show("1");
                 chbDate.CheckState = CheckState.Unchecked;
@@ -233,9 +233,9 @@ namespace PazhDataCollect
                     }
                     i++;
                 }
-                txtSQL += " FROM " + cbLocal.Text + " WHERE " + cbDateField.Text + "='";
-                txtSQL += UT.FN_FormatDate(DateTime.Now.AddDays(-1 * Convert.ToInt32(mtxtDate.Text)), chbDate.Checked, chbFormatDate.Checked) + "'";
-                MessageBox.Show(txtSQL);
+                txtSQL += " FROM " + cbLocal.Text;
+                string txt2SQL = " WHERE " + cbDateField.Text + "='" + UT.FN_FormatDate(DateTime.Now.AddDays(-1 * Convert.ToInt32(mtxtDate.Text)), chbDate.Checked, chbFormatDate.Checked) + "'";
+                MessageBox.Show(txtSQL+txt2SQL);
                 txtLocalSQL.Text = txtSQL;
                 txtLocalDB.Text = cbLocal.Text;
                 txtRemoteDB.Text = cbRemote.Text;
@@ -274,9 +274,9 @@ namespace PazhDataCollect
             Properties.Settings.Default.LocalDB = txtLocalDB.Text;
             Properties.Settings.Default.RemoteDB = txtRemoteDB.Text;
             if (chbDate.CheckState==CheckState.Checked)
-                Properties.Settings.Default.ShamsiDate = false;
+                Properties.Settings.Default.TarikhMiladi = true;
             else
-                Properties.Settings.Default.ShamsiDate = true;
+                Properties.Settings.Default.TarikhMiladi = false;
             if (chbFormatDate.CheckState == CheckState.Checked)
                 Properties.Settings.Default.Digitz8 = true;
             else
