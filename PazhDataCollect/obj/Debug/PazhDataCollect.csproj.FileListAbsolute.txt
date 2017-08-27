@@ -1,0 +1,10 @@
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\bin\Debug\PazhDataCollect.exe.config
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\bin\Debug\PazhDataCollect.exe
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\bin\Debug\PazhDataCollect.pdb
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.DataSchemeFrm.resources
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.mainFrm.resources
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.Properties.Resources.resources
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.csproj.GenerateResource.Cache
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.exe.licenses
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.exe
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.pdb

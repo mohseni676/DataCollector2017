@@ -110,7 +110,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1031, 733);
+            this.panel1.Size = new System.Drawing.Size(1031, 789);
             this.panel1.TabIndex = 0;
             // 
             // panel7
@@ -172,7 +172,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel6.Enabled = false;
             this.panel6.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.panel6.Location = new System.Drawing.Point(0, 480);
+            this.panel6.Location = new System.Drawing.Point(0, 536);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1031, 253);
             this.panel6.TabIndex = 21;
@@ -190,9 +190,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PazhDataCollect.Properties.Resources.SRC;
-            this.pictureBox1.Location = new System.Drawing.Point(984, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(987, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 109);
+            this.pictureBox1.Size = new System.Drawing.Size(44, 115);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
@@ -600,26 +600,26 @@
             this.Restore,
             this.Exit});
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(113, 48);
+            this.MainMenu.Size = new System.Drawing.Size(112, 48);
             this.MainMenu.Text = "منو اصلی";
             // 
             // Restore
             // 
             this.Restore.Name = "Restore";
-            this.Restore.Size = new System.Drawing.Size(112, 22);
+            this.Restore.Size = new System.Drawing.Size(111, 22);
             this.Restore.Text = "بازگشت";
             // 
             // Exit
             // 
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(112, 22);
+            this.Exit.Size = new System.Drawing.Size(111, 22);
             this.Exit.Text = "خروج";
             // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 733);
+            this.ClientSize = new System.Drawing.Size(1031, 789);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

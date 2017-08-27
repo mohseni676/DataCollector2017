@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbRemote = new System.Windows.Forms.GroupBox();
             this.dgRemoteAdd = new System.Windows.Forms.DataGridView();
             this.dgRemote = new System.Windows.Forms.DataGridView();
@@ -35,7 +41,7 @@
             this.BtnRemote = new System.Windows.Forms.Button();
             this.cbRemote = new System.Windows.Forms.ComboBox();
             this.gbLocal = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSQLView = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLocal = new System.Windows.Forms.Button();
             this.cbLocal = new System.Windows.Forms.ComboBox();
@@ -59,12 +65,16 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtShopID = new System.Windows.Forms.TextBox();
             this.txtShopName = new System.Windows.Forms.TextBox();
+            this.dgLocalAdd = new System.Windows.Forms.DataGridView();
+            this.dgLocal = new System.Windows.Forms.DataGridView();
             this.gbRemote.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRemoteAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgRemote)).BeginInit();
             this.gbLocal.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSQLView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgLocalAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgLocal)).BeginInit();
             this.SuspendLayout();
             // 
             // gbRemote
@@ -86,20 +96,52 @@
             // 
             // dgRemoteAdd
             // 
+            this.dgRemoteAdd.AllowUserToAddRows = false;
+            this.dgRemoteAdd.AllowUserToDeleteRows = false;
             this.dgRemoteAdd.AllowUserToOrderColumns = true;
+            this.dgRemoteAdd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgRemoteAdd.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 7F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgRemoteAdd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgRemoteAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgRemoteAdd.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgRemoteAdd.Location = new System.Drawing.Point(6, 306);
             this.dgRemoteAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgRemoteAdd.Name = "dgRemoteAdd";
+            this.dgRemoteAdd.ReadOnly = true;
+            this.dgRemoteAdd.ShowEditingIcon = false;
             this.dgRemoteAdd.Size = new System.Drawing.Size(315, 204);
             this.dgRemoteAdd.TabIndex = 4;
+            this.dgRemoteAdd.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgRemoteAdd_RowHeaderMouseDoubleClick);
             // 
             // dgRemote
             // 
             this.dgRemote.AllowUserToAddRows = false;
+            this.dgRemote.AllowUserToDeleteRows = false;
             this.dgRemote.AllowUserToOrderColumns = true;
+            this.dgRemote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgRemote.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgRemote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgRemote.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgRemote.Location = new System.Drawing.Point(6, 101);
             this.dgRemote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -108,6 +150,7 @@
             this.dgRemote.ShowEditingIcon = false;
             this.dgRemote.Size = new System.Drawing.Size(315, 204);
             this.dgRemote.TabIndex = 3;
+            this.dgRemote.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgRemote_RowHeaderMouseDoubleClick);
             // 
             // label2
             // 
@@ -141,10 +184,13 @@
             // 
             // gbLocal
             // 
-            this.gbLocal.Controls.Add(this.button3);
+            this.gbLocal.Controls.Add(this.dgLocalAdd);
+            this.gbLocal.Controls.Add(this.dgLocal);
+            this.gbLocal.Controls.Add(this.btnSQLView);
             this.gbLocal.Controls.Add(this.label3);
             this.gbLocal.Controls.Add(this.btnLocal);
             this.gbLocal.Controls.Add(this.cbLocal);
+            this.gbLocal.Font = new System.Drawing.Font("Tahoma", 8F);
             this.gbLocal.Location = new System.Drawing.Point(12, 17);
             this.gbLocal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbLocal.Name = "gbLocal";
@@ -154,23 +200,24 @@
             this.gbLocal.TabStop = false;
             this.gbLocal.Text = "سرور محلی(فرزند)";
             // 
-            // button3
+            // btnSQLView
             // 
-            this.button3.BackgroundImage = global::PazhDataCollect.Properties.Resources.if_Sql_runner_70664;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(7, 17);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(42, 38);
-            this.button3.TabIndex = 11;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSQLView.BackgroundImage = global::PazhDataCollect.Properties.Resources.if_Sql_runner_70664;
+            this.btnSQLView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSQLView.Location = new System.Drawing.Point(7, 17);
+            this.btnSQLView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSQLView.Name = "btnSQLView";
+            this.btnSQLView.Size = new System.Drawing.Size(42, 38);
+            this.btnSQLView.TabIndex = 11;
+            this.btnSQLView.UseVisualStyleBackColor = true;
+            this.btnSQLView.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(238, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 16);
+            this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "لیست جداول";
             // 
@@ -386,6 +433,64 @@
             this.txtShopName.Size = new System.Drawing.Size(161, 23);
             this.txtShopName.TabIndex = 24;
             // 
+            // dgLocalAdd
+            // 
+            this.dgLocalAdd.AllowUserToAddRows = false;
+            this.dgLocalAdd.AllowUserToDeleteRows = false;
+            this.dgLocalAdd.AllowUserToOrderColumns = true;
+            this.dgLocalAdd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgLocalAdd.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgLocalAdd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgLocalAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgLocalAdd.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgLocalAdd.Location = new System.Drawing.Point(6, 306);
+            this.dgLocalAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgLocalAdd.Name = "dgLocalAdd";
+            this.dgLocalAdd.ReadOnly = true;
+            this.dgLocalAdd.ShowEditingIcon = false;
+            this.dgLocalAdd.Size = new System.Drawing.Size(315, 204);
+            this.dgLocalAdd.TabIndex = 13;
+            this.dgLocalAdd.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgLocalAdd_RowHeaderMouseDoubleClick);
+            // 
+            // dgLocal
+            // 
+            this.dgLocal.AllowUserToAddRows = false;
+            this.dgLocal.AllowUserToDeleteRows = false;
+            this.dgLocal.AllowUserToOrderColumns = true;
+            this.dgLocal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgLocal.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgLocal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgLocal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgLocal.Location = new System.Drawing.Point(6, 101);
+            this.dgLocal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgLocal.Name = "dgLocal";
+            this.dgLocal.ReadOnly = true;
+            this.dgLocal.ShowEditingIcon = false;
+            this.dgLocal.Size = new System.Drawing.Size(315, 204);
+            this.dgLocal.TabIndex = 12;
+            this.dgLocal.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgLocal_RowHeaderMouseDoubleClick);
+            // 
             // DataSchemeFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -427,6 +532,8 @@
             this.gbLocal.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgSQLView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgLocalAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgLocal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,7 +559,7 @@
         private System.Windows.Forms.CheckBox chbFormatDate;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSQLView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgSQLView;
         private System.Windows.Forms.Label label4;
@@ -465,5 +572,7 @@
         private System.Windows.Forms.TextBox txtShopName;
         private System.Windows.Forms.DataGridView dgRemote;
         private System.Windows.Forms.DataGridView dgRemoteAdd;
+        private System.Windows.Forms.DataGridView dgLocalAdd;
+        private System.Windows.Forms.DataGridView dgLocal;
     }
 }

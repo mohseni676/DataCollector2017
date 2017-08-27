@@ -18,8 +18,8 @@ namespace PazhDataCollect
         SqlConnection RemoteCN = new SqlConnection();
         SqlConnection LocalCN = new SqlConnection();
         Utility UT = new Utility();
-        DataTable RemoteTB, RemoteAddTB, LocalTB, LocalAddTB=new DataTable();
-        BindingSource RemoteBS, RemoteAddBC, LocalBC, LocalAddBC=null;
+        DataTable RemoteTB = new DataTable(), RemoteAddTB = new DataTable(), LocalTB = new DataTable(), LocalAddTB=new DataTable();
+        BindingSource RemoteBS = new BindingSource(), RemoteAddBS = new BindingSource(), LocalBS = new BindingSource(), LocalAddBS=new BindingSource();
         public DataSchemeFrm()
         {
             InitializeComponent();
@@ -63,14 +63,19 @@ namespace PazhDataCollect
         private void BtnRemote_Click(object sender, EventArgs e)
         {
             RemoteCN.ConnectionString = Properties.Settings.Default.RemoteCN;
-           
+
+            
             //MessageBox.Show("select COLUMN_NAME,TABLE_NAME from INFORMATION_SCHEMA.COLUMNS where  TABLE_NAME=\"" + "TEST" + "\"");
             if (cbRemote.Text != "" && RemoteCN.ConnectionString !="")
             {
                 RemoteTB = UT.FN_GetTbColumnList(RemoteCN, cbRemote.Text);
-                MessageBox.Show(RemoteTB.Rows.Count.ToString());
-                dgRemote.DataSource = RemoteTB;
-                //RemoteBS.DataSource = RemoteTB;
+                // MessageBox.Show(RemoteTB.Rows.Count.ToString());
+                RemoteBS.DataSource = RemoteTB;
+                dgRemote.DataSource = RemoteBS;
+                RemoteAddTB = RemoteTB.Clone();
+                RemoteAddBS.DataSource = RemoteAddTB;
+                dgRemoteAdd.DataSource = RemoteAddBS;
+
                 
             }
             else
@@ -84,6 +89,14 @@ namespace PazhDataCollect
             LocalCN.ConnectionString = Properties.Settings.Default.LocalCN;
             if (cbLocal.Text != "" && LocalCN.ConnectionString != "")
             {
+                LocalTB = UT.FN_GetTbColumnList(LocalCN, cbLocal.Text);
+                LocalBS.DataSource = LocalTB;
+                dgLocal.DataSource = LocalBS;
+                LocalAddTB = LocalTB.Clone();
+                LocalAddBS.DataSource = LocalAddTB;
+                dgLocalAdd.DataSource = LocalAddBS;
+
+
             }
             else
             {
@@ -120,6 +133,80 @@ namespace PazhDataCollect
 
         private void lbRemoteAdded_DoubleClick(object sender, EventArgs e)
         {
+        }
+
+        private void dgRemote_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dgRemote.Rows.Count >= 1)
+            {
+                foreach (DataGridViewRow Row in dgRemote.SelectedRows)
+                {
+                    DataRow RW1 = RemoteTB.Rows[Row.Index];
+                    RemoteAddTB.ImportRow(RW1);
+                    RemoteTB.Rows.RemoveAt(Row.Index);
+                }
+            }
+
+        }
+
+        private void dgRemoteAdd_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dgRemoteAdd.Rows.Count >= 1)
+            {
+                foreach (DataGridViewRow Row in dgRemoteAdd.SelectedRows)
+                {
+                    DataRow RW1 = RemoteAddTB.Rows[Row.Index];
+                    RemoteTB.ImportRow(RW1);
+                    RemoteAddTB.Rows.RemoveAt(Row.Index);
+                }
+            }
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            LocalCN.ConnectionString = Properties.Settings.Default.LocalCN;
+            using (LocalCN)
+            {
+                using (SqlDataAdapter a = new SqlDataAdapter(
+                                   "SELECT TOP 100 * FROM " + cbLocal.Text, LocalCN))
+                {
+
+                    DataTable t = new DataTable();
+                    a.Fill(t);
+
+                    dgSQLView.DataSource = t;
+                }
+            }
+
+        }
+
+        private void dgLocal_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dgLocal.Rows.Count >= 1)
+            {
+                foreach (DataGridViewRow Row in dgLocal.SelectedRows)
+                {
+                    DataRow RW1 = LocalTB.Rows[Row.Index];
+                    LocalAddTB.ImportRow(RW1);
+                    LocalTB.Rows.RemoveAt(Row.Index);
+                }
+            }
+
+        }
+
+        private void dgLocalAdd_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dgLocalAdd.Rows.Count >= 1)
+            {
+                foreach (DataGridViewRow Row in dgLocalAdd.SelectedRows)
+                {
+                    DataRow RW1 = LocalAddTB.Rows[Row.Index];
+                    LocalTB.ImportRow(RW1);
+                    LocalAddTB.Rows.RemoveAt(Row.Index);
+                }
+            }
+
         }
 
         private void lbLocalAdded_DoubleClick(object sender, EventArgs e)
@@ -161,19 +248,6 @@ namespace PazhDataCollect
         private void button3_Click(object sender, EventArgs e)
         {
             
-            LocalCN.ConnectionString = Properties.Settings.Default.LocalCN;
-            using (LocalCN)
-            {
-                using (SqlDataAdapter a = new SqlDataAdapter(
-                                   "SELECT TOP 100 * FROM " + cbLocal.Text, LocalCN))
-                {
-                    
-                    DataTable t = new DataTable();
-                    a.Fill(t);
-                    
-                    dgSQLView.DataSource = t;
-                }
-            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
