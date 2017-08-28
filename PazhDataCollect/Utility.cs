@@ -9,8 +9,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Linq;
 using System.Globalization;
-
-
+using System.Diagnostics;
 
 namespace PazhDataCollect
 {
@@ -161,5 +160,88 @@ namespace PazhDataCollect
             return SQL;
 
         }
+        public void FN_SendDataToServer()
+        {
+            //definitions
+            EventLog logger = new EventLog();
+            logger.Source = "Pazh Data Collector";
+
+            string LocalCNStr = Properties.Settings.Default.LocalCN;
+            string RemoteCNStr = Properties.Settings.Default.RemoteCN;
+            int DaysBefore = Properties.Settings.Default.DaysBefore;
+            string SQLtxt = FN_GetQueryString(DaysBefore);
+            DataTable TbToTransfer = new DataTable();
+            //check connection to local server
+            using (SqlConnection LocalCon = new SqlConnection(LocalCNStr))
+            {
+                try
+                {
+                    LocalCon.Open();
+                }
+                catch (Exception Err)
+                {
+                    logger.WriteEntry("Error in connecting to the local DB server (" + Err.Message + ")", EventLogEntryType.FailureAudit);
+                    return;
+                }
+            }
+            //check connection to remote server
+            using (SqlConnection LocalCon = new SqlConnection(RemoteCNStr))
+            {
+                try
+                {
+                    LocalCon.Open();
+                }
+                catch (Exception Err)
+                {
+                    logger.WriteEntry("Error in connecting to the remote DB server (" + Err.Message + ")", EventLogEntryType.FailureAudit);
+                    return;
+                }
+            }
+            //Fill Datatable for transfering ...
+            using (SqlConnection LCN = new SqlConnection(LocalCNStr))
+            {
+                LCN.Open();
+                try
+                {
+                    using (SqlDataAdapter DT = new SqlDataAdapter(SQLtxt, LCN))
+                    {
+                        DT.Fill(TbToTransfer);
+                    }
+                }
+                catch (Exception err)
+                {
+                    logger.WriteEntry("Error in running query for table filling... (" + err.Message + ")", EventLogEntryType.FailureAudit);
+                    return;
+                }
+            }
+            //Bulk copy data to remote server
+            using (SqlConnection LCN = new SqlConnection(RemoteCNStr))
+            {
+                LCN.Open();
+                using (SqlBulkCopy Copy = new SqlBulkCopy(LCN))
+                {
+                    Copy.DestinationTableName = Properties.Settings.Default.RemoteDB;
+                    foreach (DataColumn col in TbToTransfer.Columns)
+                    {
+                        Copy.ColumnMappings.Add(col.ColumnName, col.ColumnName);
+                    }
+                    try
+                    {
+                        Copy.WriteToServer(TbToTransfer);
+                        logger.WriteEntry("Data Succesfully Transfered. ", EventLogEntryType.SuccessAudit);
+                    }
+                    catch (Exception er)
+                    {
+                        logger.WriteEntry("Error in Transfering Data to Remote Server... (" + er.Message + ")", EventLogEntryType.FailureAudit);
+                        return;
+                    }
+
+                }
+            }
+
+
+            //----------------------------------
+        }
+
     }
 }

@@ -69,6 +69,10 @@ namespace PazhDataCollect
             txtTimer.Text = (Properties.Settings.Default.timer / 60000).ToString();
             timer1.Interval = Properties.Settings.Default.timer;
             DaysBefore = Properties.Settings.Default.DaysBefore;
+            if (Properties.Settings.Default.Enabled == true)
+                chbTimer.CheckState = CheckState.Checked;
+            else
+                chbTimer.CheckState = CheckState.Unchecked;
 
             if (Properties.Settings.Default.RemoteCN != "")
             {
@@ -246,6 +250,21 @@ namespace PazhDataCollect
         private void button9_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.timer = Convert.ToInt32(txtTimer.Text) * 60000;
+            Properties.Settings.Default.Save();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.Enabled==true)
+            UT.FN_SendDataToServer();
+        }
+
+        private void chbTimer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbTimer.CheckState == CheckState.Checked)
+                Properties.Settings.Default.Enabled = true;
+            else
+                Properties.Settings.Default.Enabled = false;
             Properties.Settings.Default.Save();
         }
     }

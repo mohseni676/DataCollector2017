@@ -31,17 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainFrm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtPass = new System.Windows.Forms.MaskedTextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.txtBeforDays = new System.Windows.Forms.MaskedTextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCount = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.txtSQL = new System.Windows.Forms.TextBox();
             this.dgLocal = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtTimer = new System.Windows.Forms.MaskedTextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbDBList = new System.Windows.Forms.ComboBox();
@@ -55,6 +58,7 @@
             this.txtDBPassword = new System.Windows.Forms.MaskedTextBox();
             this.txtRserver = new System.Windows.Forms.TextBox();
             this.lbl_RServer = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cbLDBname = new System.Windows.Forms.ComboBox();
@@ -68,36 +72,33 @@
             this.txtLPassword = new System.Windows.Forms.MaskedTextBox();
             this.txtLServer = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chbTimer = new System.Windows.Forms.CheckBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtTimer = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.txtSQL = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.MainMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Restore = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.txtPass = new System.Windows.Forms.MaskedTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtBeforDays = new System.Windows.Forms.MaskedTextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgLocal)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.MainMenu.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,6 +111,132 @@
             this.panel1.Size = new System.Drawing.Size(1039, 665);
             this.panel1.TabIndex = 0;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel6.Controls.Add(this.txtPass);
+            this.panel6.Controls.Add(this.txtUser);
+            this.panel6.Controls.Add(this.button7);
+            this.panel6.Controls.Add(this.button6);
+            this.panel6.Controls.Add(this.label12);
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1039, 48);
+            this.panel6.TabIndex = 24;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(383, 15);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(151, 23);
+            this.txtPass.TabIndex = 6;
+            // 
+            // txtUser
+            // 
+            this.txtUser.Location = new System.Drawing.Point(607, 13);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(123, 23);
+            this.txtUser.TabIndex = 5;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(57, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(132, 42);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "قفل مجدد";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(206, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(132, 42);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "ورود";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(540, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 16);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "رمز عبور:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(736, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(68, 16);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "نام کاربری:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(879, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(118, 16);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "ورود به حالت تنظیم:";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel8.Controls.Add(this.txtBeforDays);
+            this.panel8.Controls.Add(this.label14);
+            this.panel8.Controls.Add(this.pictureBox1);
+            this.panel8.Controls.Add(this.lblCount);
+            this.panel8.Controls.Add(this.dgLocal);
+            this.panel8.Controls.Add(this.groupBox2);
+            this.panel8.Controls.Add(this.button11);
+            this.panel8.Controls.Add(this.groupBox1);
+            this.panel8.Controls.Add(this.button10);
+            this.panel8.Controls.Add(this.groupBox3);
+            this.panel8.Controls.Add(this.txtSQL);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel8.Location = new System.Drawing.Point(0, 51);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1039, 614);
+            this.panel8.TabIndex = 23;
+            // 
+            // txtBeforDays
+            // 
+            this.txtBeforDays.Location = new System.Drawing.Point(908, 455);
+            this.txtBeforDays.Mask = "0000";
+            this.txtBeforDays.Name = "txtBeforDays";
+            this.txtBeforDays.Size = new System.Drawing.Size(46, 23);
+            this.txtBeforDays.TabIndex = 29;
+            this.txtBeforDays.Text = "100";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(970, 458);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(53, 16);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "تعداد روز";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PazhDataCollect.Properties.Resources.SRC;
+            this.pictureBox1.Location = new System.Drawing.Point(982, 489);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(44, 121);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblCount
             // 
             this.lblCount.AutoSize = true;
@@ -119,36 +246,6 @@
             this.lblCount.TabIndex = 27;
             this.lblCount.Text = "lblCount";
             // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(127, 452);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(327, 35);
-            this.button11.TabIndex = 26;
-            this.button11.Text = "انتقال اطلاعات بصورت دستی";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(561, 449);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(341, 35);
-            this.button10.TabIndex = 25;
-            this.button10.Text = "تهیه Query و نمایش داده ها برای ارسال";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click_1);
-            // 
-            // txtSQL
-            // 
-            this.txtSQL.BackColor = System.Drawing.Color.LightCyan;
-            this.txtSQL.Location = new System.Drawing.Point(3, 359);
-            this.txtSQL.Multiline = true;
-            this.txtSQL.Name = "txtSQL";
-            this.txtSQL.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtSQL.Size = new System.Drawing.Size(1025, 87);
-            this.txtSQL.TabIndex = 24;
-            // 
             // dgLocal
             // 
             this.dgLocal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -156,66 +253,6 @@
             this.dgLocal.Name = "dgLocal";
             this.dgLocal.Size = new System.Drawing.Size(974, 122);
             this.dgLocal.TabIndex = 1;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button9);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.txtTimer);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Location = new System.Drawing.Point(3, 280);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1025, 73);
-            this.groupBox3.TabIndex = 19;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "تنظیمات مربوط به سرویس ویندوز برداشت اطلاعات";
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(624, 22);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(179, 39);
-            this.button9.TabIndex = 20;
-            this.button9.Text = "ذخیره تنظیم تایمر";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(809, 41);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 16);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "دقیقه";
-            // 
-            // txtTimer
-            // 
-            this.txtTimer.Location = new System.Drawing.Point(853, 38);
-            this.txtTimer.Mask = "000";
-            this.txtTimer.Name = "txtTimer";
-            this.txtTimer.Size = new System.Drawing.Size(46, 23);
-            this.txtTimer.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(905, 41);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 16);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "فاصله برداشت ها";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(18, 22);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(586, 39);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "تنظیمات مربوط به بانک اطلاعاتی و تطبیق فیلدها";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // groupBox2
             // 
@@ -349,6 +386,16 @@
             this.lbl_RServer.TabIndex = 8;
             this.lbl_RServer.Text = "آدرس سرور";
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(127, 452);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(327, 35);
+            this.button11.TabIndex = 26;
+            this.button11.Text = "انتقال اطلاعات بصورت دستی";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panel4);
@@ -481,6 +528,99 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "آدرس سرور";
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(561, 449);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(341, 35);
+            this.button10.TabIndex = 25;
+            this.button10.Text = "تهیه Query و نمایش داده ها برای ارسال";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.chbTimer);
+            this.groupBox3.Controls.Add(this.button9);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.txtTimer);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.button5);
+            this.groupBox3.Location = new System.Drawing.Point(3, 280);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1025, 73);
+            this.groupBox3.TabIndex = 19;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "تنظیمات مربوط به سرویس ویندوز برداشت اطلاعات";
+            // 
+            // chbTimer
+            // 
+            this.chbTimer.AutoSize = true;
+            this.chbTimer.Location = new System.Drawing.Point(37, 32);
+            this.chbTimer.Name = "chbTimer";
+            this.chbTimer.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chbTimer.Size = new System.Drawing.Size(109, 20);
+            this.chbTimer.TabIndex = 21;
+            this.chbTimer.Text = "فعالسازی تایمر";
+            this.chbTimer.UseVisualStyleBackColor = true;
+            this.chbTimer.CheckedChanged += new System.EventHandler(this.chbTimer_CheckedChanged);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(624, 22);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(179, 39);
+            this.button9.TabIndex = 20;
+            this.button9.Text = "ذخیره تنظیم تایمر";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(809, 41);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 16);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "دقیقه";
+            // 
+            // txtTimer
+            // 
+            this.txtTimer.Location = new System.Drawing.Point(853, 38);
+            this.txtTimer.Mask = "000";
+            this.txtTimer.Name = "txtTimer";
+            this.txtTimer.Size = new System.Drawing.Size(46, 23);
+            this.txtTimer.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(905, 41);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 16);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "فاصله برداشت ها";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(203, 22);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(401, 39);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "تنظیمات مربوط به بانک اطلاعاتی و تطبیق فیلدها";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // txtSQL
+            // 
+            this.txtSQL.BackColor = System.Drawing.Color.LightCyan;
+            this.txtSQL.Location = new System.Drawing.Point(3, 359);
+            this.txtSQL.Multiline = true;
+            this.txtSQL.Name = "txtSQL";
+            this.txtSQL.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtSQL.Size = new System.Drawing.Size(1025, 87);
+            this.txtSQL.TabIndex = 24;
+            // 
             // notifyIcon1
             // 
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
@@ -509,131 +649,9 @@
             this.Exit.Size = new System.Drawing.Size(111, 22);
             this.Exit.Text = "خروج";
             // 
-            // panel8
+            // timer1
             // 
-            this.panel8.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel8.Controls.Add(this.txtBeforDays);
-            this.panel8.Controls.Add(this.label14);
-            this.panel8.Controls.Add(this.pictureBox1);
-            this.panel8.Controls.Add(this.lblCount);
-            this.panel8.Controls.Add(this.dgLocal);
-            this.panel8.Controls.Add(this.groupBox2);
-            this.panel8.Controls.Add(this.button11);
-            this.panel8.Controls.Add(this.groupBox1);
-            this.panel8.Controls.Add(this.button10);
-            this.panel8.Controls.Add(this.groupBox3);
-            this.panel8.Controls.Add(this.txtSQL);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 51);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1039, 614);
-            this.panel8.TabIndex = 23;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel6.Controls.Add(this.txtPass);
-            this.panel6.Controls.Add(this.txtUser);
-            this.panel6.Controls.Add(this.button7);
-            this.panel6.Controls.Add(this.button6);
-            this.panel6.Controls.Add(this.label12);
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1039, 48);
-            this.panel6.TabIndex = 24;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(879, 18);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(118, 16);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "ورود به حالت تنظیم:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(736, 18);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 16);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "نام کاربری:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(540, 18);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 16);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "رمز عبور:";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(206, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(132, 42);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "ورود";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(57, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(132, 42);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "قفل مجدد";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // txtUser
-            // 
-            this.txtUser.Location = new System.Drawing.Point(607, 13);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(123, 23);
-            this.txtUser.TabIndex = 5;
-            // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(383, 15);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(151, 23);
-            this.txtPass.TabIndex = 6;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PazhDataCollect.Properties.Resources.SRC;
-            this.pictureBox1.Location = new System.Drawing.Point(982, 489);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 121);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txtBeforDays
-            // 
-            this.txtBeforDays.Location = new System.Drawing.Point(908, 455);
-            this.txtBeforDays.Mask = "0000";
-            this.txtBeforDays.Name = "txtBeforDays";
-            this.txtBeforDays.Size = new System.Drawing.Size(46, 23);
-            this.txtBeforDays.TabIndex = 29;
-            this.txtBeforDays.Text = "100";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(970, 458);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 16);
-            this.label14.TabIndex = 28;
-            this.label14.Text = "تعداد روز";
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // mainFrm
             // 
@@ -649,9 +667,12 @@
             this.Load += new System.EventHandler(this.mainFrm_Load);
             this.Resize += new System.EventHandler(this.mainFrm_Resize);
             this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgLocal)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -662,12 +683,9 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.MainMenu.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -729,6 +747,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.MaskedTextBox txtBeforDays;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.CheckBox chbTimer;
     }
 }
 
