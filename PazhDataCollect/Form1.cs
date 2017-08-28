@@ -18,6 +18,7 @@ namespace PazhDataCollect
         Utility UT = new Utility();
         SqlConnectionStringBuilder RemoteCN = new SqlConnectionStringBuilder();
         SqlConnectionStringBuilder LocalCN = new SqlConnectionStringBuilder();
+        int DaysBefore;
         public mainFrm()
         {
             InitializeComponent();
@@ -65,6 +66,9 @@ namespace PazhDataCollect
 
         private void mainFrm_Load(object sender, EventArgs e)
         {
+            txtTimer.Text = (Properties.Settings.Default.timer / 60000).ToString();
+            timer1.Interval = Properties.Settings.Default.timer;
+            DaysBefore = Properties.Settings.Default.DaysBefore;
 
             if (Properties.Settings.Default.RemoteCN != "")
             {
@@ -137,11 +141,11 @@ namespace PazhDataCollect
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            panel6.Enabled = true;
+            //panel6.Enabled = true;
             using (SqlConnection LCN = new SqlConnection(Properties.Settings.Default.LocalCN))
             {
                 LCN.Open();
-                txtSQL.Text = UT.FN_GetQueryString();
+                txtSQL.Text = UT.FN_GetQueryString(Convert.ToInt32( txtBeforDays.Text));
 
                 try
                 {
@@ -153,7 +157,7 @@ namespace PazhDataCollect
                     }
                 }catch (Exception err)
                 {
-                    MessageBox.Show("خطای اجرای Query : \r\n"+ err.Message +"\r\n"+err.HResult);
+                    MessageBox.Show("خطای اجرای Query : \r\n"+ err.Message );
                 }
             }
 
@@ -172,45 +176,12 @@ namespace PazhDataCollect
 
 
                     Copy.DestinationTableName = Properties.Settings.Default.RemoteDB;
-
-                    //Column Mapping
-
                     foreach(DataColumn col in TB.Columns)
                     {
-                        MessageBox.Show(col.ColumnName);
+                      //  MessageBox.Show(col.ColumnName);
                         Copy.ColumnMappings.Add(col.ColumnName, col.ColumnName);
                     }
 
-                   /* if (TB.Columns.Contains("ShopID"))
-                        Copy.ColumnMappings.Add("ShopID", "ShopID");
-                    if (TB.Columns.Contains("ShopName"))
-                        Copy.ColumnMappings.Add("ShopName", "ShopName");
-                    if (TB.Columns.Contains("Fac_Serial"))
-                        Copy.ColumnMappings.Add("Fac_Serial", "Fac_Serial");
-                    if (TB.Columns.Contains("Fac_NO"))
-                        Copy.ColumnMappings.Add("Fac_NO", "Fac_NO");
-                    if (TB.Columns.Contains("RegDate"))
-                        Copy.ColumnMappings.Add("RegDate", "RegDate");
-                    if (TB.Columns.Contains("FacItem_Date"))
-                        Copy.ColumnMappings.Add("FacItem_Date", "FacItem_Date");
-                    if (TB.Columns.Contains("FacItem_Time"))
-                        Copy.ColumnMappings.Add("FacItem_Time", "FacItem_Time");
-                    if (TB.Columns.Contains("FacItem_ID"))
-                        Copy.ColumnMappings.Add("FacItem_ID", "FacItem_ID");
-                    if (TB.Columns.Contains("FacItem_Name"))
-                        Copy.ColumnMappings.Add("FacItem_Name", "FacItem_Name");
-                    if (TB.Columns.Contains("FacItem_Fee"))
-                        Copy.ColumnMappings.Add("FacItem_Fee", "FacItem_Fee");
-                    if (TB.Columns.Contains("FacItem_QT"))
-                        Copy.ColumnMappings.Add("FacItem_QT", "FacItem_QT");
-                    if (TB.Columns.Contains("FacItem_Discount"))
-                        Copy.ColumnMappings.Add("FacItem_Discount", "FacItem_Discount");
-                    if (TB.Columns.Contains("Fac_Discount"))
-                        Copy.ColumnMappings.Add("Fac_Discount", "Fac_Discount");
-                    if (TB.Columns.Contains("Fac_Total"))
-                        Copy.ColumnMappings.Add("Fac_Total", "Fac_Total");*/
-                    //End Column Mapping
-                    //MessageBox.Show(Copy.ColumnMappings.Cast<string>());
                     Copy.SqlRowsCopied +=
                     new SqlRowsCopiedEventHandler(OnSqlRowsCopied);
                     Copy.NotifyAfter = 10;
@@ -251,6 +222,31 @@ namespace PazhDataCollect
         {
             this.Show();
             this.WindowState = FormWindowState.Normal;
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            if (txtUser.Text=="supervisor" && txtPass.Text == "676ineshom")
+            {
+                panel8.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("نام کاربری یا پسورد اشتباه است");
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            panel8.Enabled = false;
+            txtUser.Text = "";
+            txtPass.Text = "";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.timer = Convert.ToInt32(txtTimer.Text) * 60000;
+            Properties.Settings.Default.Save();
         }
     }
 }

@@ -214,5 +214,17 @@ namespace PazhDataCollect.Properties {
                 this["FinalSQL"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("900000")]
+        public int timer {
+            get {
+                return ((int)(this["timer"]));
+            }
+            set {
+                this["timer"] = value;
+            }
+        }
     }
 }

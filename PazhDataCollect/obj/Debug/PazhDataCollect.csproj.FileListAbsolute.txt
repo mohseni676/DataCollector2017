@@ -9,3 +9,4 @@ C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDa
 C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.exe
 C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.pdb
 C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.csprojResolveAssemblyReference.cache
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\bin\Debug\EasyScintilla.dll

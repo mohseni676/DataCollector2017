@@ -144,9 +144,9 @@ namespace PazhDataCollect
             }
             return Cdate;
         }
-        public string FN_GetQueryString()
+        public string FN_GetQueryString(int DaysBefore)
         {
-            int DaysBefore = Properties.Settings.Default.DaysBefore;
+             
             string ShopName = Properties.Settings.Default.ShopName;
             string ShopID = Properties.Settings.Default.ShopID;
             string DateField = Properties.Settings.Default.DateField;

@@ -169,7 +169,7 @@ namespace PazhDataCollect
             using (LocalCN)
             {
                 using (SqlDataAdapter a = new SqlDataAdapter(
-                                   "SELECT TOP 100 * FROM " + cbLocal.Text, LocalCN))
+                                   "SELECT TOP 5000 * FROM " + cbLocal.Text, LocalCN))
                 {
 
                     DataTable t = new DataTable();
