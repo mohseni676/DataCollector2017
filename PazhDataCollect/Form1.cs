@@ -70,9 +70,15 @@ namespace PazhDataCollect
             timer1.Interval = Properties.Settings.Default.timer;
             DaysBefore = Properties.Settings.Default.DaysBefore;
             if (Properties.Settings.Default.Enabled == true)
+            {
                 chbTimer.CheckState = CheckState.Checked;
+                timer1.Enabled = true;
+            }
             else
+            {
                 chbTimer.CheckState = CheckState.Unchecked;
+                timer1.Enabled = false;
+            }
 
             if (Properties.Settings.Default.RemoteCN != "")
             {
@@ -90,6 +96,15 @@ namespace PazhDataCollect
                 txtLPassword.Text = LocalCN.Password.ToString();
                 cbLDBname.Text = LocalCN.InitialCatalog.ToString();
             }
+            if (timer1.Enabled==true)
+            {
+                txtStat.Text = "1";
+            }else
+            {
+                txtStat.Text = "0";
+            }
+
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -266,6 +281,11 @@ namespace PazhDataCollect
             else
                 Properties.Settings.Default.Enabled = false;
             Properties.Settings.Default.Save();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            UT.FN_WriteToRegistery();
         }
     }
 }

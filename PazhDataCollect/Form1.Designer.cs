@@ -86,6 +86,9 @@
             this.Restore = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txtStat = new System.Windows.Forms.Label();
+            this.txtLog = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -103,12 +106,13 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtLog);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1039, 665);
+            this.panel1.Size = new System.Drawing.Size(1039, 767);
             this.panel1.TabIndex = 0;
             // 
             // panel6
@@ -204,7 +208,7 @@
             this.panel8.Controls.Add(this.groupBox3);
             this.panel8.Controls.Add(this.txtSQL);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 51);
+            this.panel8.Location = new System.Drawing.Point(0, 153);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1039, 614);
             this.panel8.TabIndex = 23;
@@ -540,6 +544,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button8);
+            this.groupBox3.Controls.Add(this.txtStat);
             this.groupBox3.Controls.Add(this.chbTimer);
             this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Controls.Add(this.label9);
@@ -556,7 +562,7 @@
             // chbTimer
             // 
             this.chbTimer.AutoSize = true;
-            this.chbTimer.Location = new System.Drawing.Point(37, 32);
+            this.chbTimer.Location = new System.Drawing.Point(77, 32);
             this.chbTimer.Name = "chbTimer";
             this.chbTimer.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.chbTimer.Size = new System.Drawing.Size(109, 20);
@@ -567,9 +573,9 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(624, 22);
+            this.button9.Location = new System.Drawing.Point(667, 22);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(179, 39);
+            this.button9.Size = new System.Drawing.Size(136, 39);
             this.button9.TabIndex = 20;
             this.button9.Text = "ذخیره تنظیم تایمر";
             this.button9.UseVisualStyleBackColor = true;
@@ -603,9 +609,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(203, 22);
+            this.button5.Location = new System.Drawing.Point(369, 22);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(401, 39);
+            this.button5.Size = new System.Drawing.Size(292, 39);
             this.button5.TabIndex = 18;
             this.button5.Text = "تنظیمات مربوط به بانک اطلاعاتی و تطبیق فیلدها";
             this.button5.UseVisualStyleBackColor = true;
@@ -651,13 +657,42 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // txtStat
+            // 
+            this.txtStat.AutoSize = true;
+            this.txtStat.Location = new System.Drawing.Point(26, 33);
+            this.txtStat.Name = "txtStat";
+            this.txtStat.Size = new System.Drawing.Size(45, 16);
+            this.txtStat.TabIndex = 22;
+            this.txtStat.Text = "txtStat";
+            // 
+            // txtLog
+            // 
+            this.txtLog.Location = new System.Drawing.Point(7, 51);
+            this.txtLog.Multiline = true;
+            this.txtLog.Name = "txtLog";
+            this.txtLog.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtLog.Size = new System.Drawing.Size(1021, 96);
+            this.txtLog.TabIndex = 25;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(227, 22);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(136, 39);
+            this.button8.TabIndex = 23;
+            this.button8.Text = "ذخیره در رجیستری";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 665);
+            this.ClientSize = new System.Drawing.Size(1039, 767);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -667,6 +702,7 @@
             this.Load += new System.EventHandler(this.mainFrm_Load);
             this.Resize += new System.EventHandler(this.mainFrm_Resize);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -748,6 +784,9 @@
         private System.Windows.Forms.MaskedTextBox txtBeforDays;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox chbTimer;
+        private System.Windows.Forms.Label txtStat;
+        private System.Windows.Forms.TextBox txtLog;
+        private System.Windows.Forms.Button button8;
     }
 }
 

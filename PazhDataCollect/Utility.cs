@@ -10,6 +10,9 @@ using System.Net.Sockets;
 using System.Linq;
 using System.Globalization;
 using System.Diagnostics;
+using System.IO;
+using Microsoft.Win32;
+using System.Configuration;
 
 namespace PazhDataCollect
 {
@@ -163,8 +166,6 @@ namespace PazhDataCollect
         public void FN_SendDataToServer()
         {
             //definitions
-            EventLog logger = new EventLog();
-            logger.Source = "Pazh Data Collector";
 
             string LocalCNStr = Properties.Settings.Default.LocalCN;
             string RemoteCNStr = Properties.Settings.Default.RemoteCN;
@@ -172,16 +173,20 @@ namespace PazhDataCollect
             string SQLtxt = FN_GetQueryString(DaysBefore);
             DataTable TbToTransfer = new DataTable();
             //check connection to local server
-            using (SqlConnection LocalCon = new SqlConnection(LocalCNStr))
+            using (StreamWriter w = File.AppendText("log.txt"))
+            {
+                using (SqlConnection LocalCon = new SqlConnection(LocalCNStr))
             {
                 try
                 {
                     LocalCon.Open();
+                        Log("info:Local Server Accessable", w);
+
                 }
                 catch (Exception Err)
                 {
-                    logger.WriteEntry("Error in connecting to the local DB server (" + Err.Message + ")", EventLogEntryType.FailureAudit);
-                    return;
+                        Log("Error: Local Server Not Accessable:"+Err.Message, w);
+                        return;
                 }
             }
             //check connection to remote server
@@ -190,11 +195,12 @@ namespace PazhDataCollect
                 try
                 {
                     LocalCon.Open();
-                }
+                        Log("Info:Remote Server Accessable", w);
+                    }
                 catch (Exception Err)
                 {
-                    logger.WriteEntry("Error in connecting to the remote DB server (" + Err.Message + ")", EventLogEntryType.FailureAudit);
-                    return;
+                        Log("Error: Remote Server Not Accessable:" + Err.Message, w);
+                        return;
                 }
             }
             //Fill Datatable for transfering ...
@@ -206,42 +212,65 @@ namespace PazhDataCollect
                     using (SqlDataAdapter DT = new SqlDataAdapter(SQLtxt, LCN))
                     {
                         DT.Fill(TbToTransfer);
+                            Log("Info:Table Filled", w);
+                        }
                     }
-                }
                 catch (Exception err)
                 {
-                    logger.WriteEntry("Error in running query for table filling... (" + err.Message + ")", EventLogEntryType.FailureAudit);
-                    return;
+                        Log("Error: Error in filling table:" + err.Message, w);
+
+                        return;
                 }
             }
-            //Bulk copy data to remote server
-            using (SqlConnection LCN = new SqlConnection(RemoteCNStr))
-            {
-                LCN.Open();
-                using (SqlBulkCopy Copy = new SqlBulkCopy(LCN))
+                //Bulk copy data to remote server
+                using (SqlConnection LCN = new SqlConnection(RemoteCNStr))
                 {
-                    Copy.DestinationTableName = Properties.Settings.Default.RemoteDB;
-                    foreach (DataColumn col in TbToTransfer.Columns)
+                    LCN.Open();
+                    using (SqlBulkCopy Copy = new SqlBulkCopy(LCN))
                     {
-                        Copy.ColumnMappings.Add(col.ColumnName, col.ColumnName);
-                    }
-                    try
-                    {
-                        Copy.WriteToServer(TbToTransfer);
-                        logger.WriteEntry("Data Succesfully Transfered. ", EventLogEntryType.SuccessAudit);
-                    }
-                    catch (Exception er)
-                    {
-                        logger.WriteEntry("Error in Transfering Data to Remote Server... (" + er.Message + ")", EventLogEntryType.FailureAudit);
-                        return;
-                    }
+                        Copy.DestinationTableName = Properties.Settings.Default.RemoteDB;
+                        foreach (DataColumn col in TbToTransfer.Columns)
+                        {
+                            Copy.ColumnMappings.Add(col.ColumnName, col.ColumnName);
+                        }
+                        try
+                        {
+                            Copy.WriteToServer(TbToTransfer);
+                            Log("Info:Data Transfered Successfuly", w);
 
+                        }
+                        catch (Exception er)
+                        {
+                            Log("Error: Cannot Copy Data to Destination:" + er.Message, w);
+
+                            return;
+                        }
+
+                    }
                 }
             }
 
 
             //----------------------------------
         }
+        public static void Log(string logMessage, TextWriter w)
+        {
+            w.Write("\r\nLog Entry : ");
+            w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(),
+                DateTime.Now.ToLongDateString());
+            //w.WriteLine("  :");
+            w.WriteLine("  :{0}", logMessage);
+            w.WriteLine("-------------------------------");
+        }
+        public void FN_WriteToRegistery()
+        {
+            RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\Pazh");
+            foreach (SettingsProperty p in Properties.Settings.Default.Properties)
+            {
+                key.SetValue(p.Name, Properties.Settings.Default[p.Name].ToString());
+            }
+        }
+
 
     }
 }
