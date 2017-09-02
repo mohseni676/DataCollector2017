@@ -293,5 +293,10 @@ namespace PazhDataCollect
         {
             UT.FN_WriteToRegistery();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            UT.FN_WriteToStrFile();
+        }
     }
 }

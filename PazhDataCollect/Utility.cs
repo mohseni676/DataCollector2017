@@ -275,6 +275,17 @@ namespace PazhDataCollect
                 key.SetValue(p.Name, Properties.Settings.Default[p.Name].ToString());
             }
         }
+        public void FN_WriteToStrFile()
+        {
+            using (StreamWriter w = File.AppendText(Properties.Settings.Default.ShopID + ".cfg"))
+            {
+                foreach (SettingsProperty p in Properties.Settings.Default.Properties)
+                {
+                    w.WriteLine("{0} : {1};",p.Name, Properties.Settings.Default[p.Name].ToString());
+                }
+            }
+        }
+
 
 
     }

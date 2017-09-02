@@ -89,6 +89,7 @@
             this.Restore = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button12 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -554,6 +555,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button12);
             this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.Controls.Add(this.txtStat);
             this.groupBox3.Controls.Add(this.chbTimer);
@@ -571,9 +573,9 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(227, 22);
+            this.button8.Location = new System.Drawing.Point(241, 22);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(136, 39);
+            this.button8.Size = new System.Drawing.Size(122, 39);
             this.button8.TabIndex = 23;
             this.button8.Text = "ذخیره در رجیستری";
             this.button8.UseVisualStyleBackColor = true;
@@ -582,7 +584,7 @@
             // txtStat
             // 
             this.txtStat.AutoSize = true;
-            this.txtStat.Location = new System.Drawing.Point(26, 33);
+            this.txtStat.Location = new System.Drawing.Point(9, 54);
             this.txtStat.Name = "txtStat";
             this.txtStat.Size = new System.Drawing.Size(45, 16);
             this.txtStat.TabIndex = 22;
@@ -591,7 +593,7 @@
             // chbTimer
             // 
             this.chbTimer.AutoSize = true;
-            this.chbTimer.Location = new System.Drawing.Point(77, 32);
+            this.chbTimer.Location = new System.Drawing.Point(9, 31);
             this.chbTimer.Name = "chbTimer";
             this.chbTimer.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.chbTimer.Size = new System.Drawing.Size(109, 20);
@@ -688,6 +690,16 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(113, 22);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(122, 39);
+            this.button12.TabIndex = 24;
+            this.button12.Text = "ذخیره در فایل";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // mainFrm
             // 
@@ -788,6 +800,7 @@
         private System.Windows.Forms.Label txtStat;
         private System.Windows.Forms.TextBox txtLog;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button12;
     }
 }
 
