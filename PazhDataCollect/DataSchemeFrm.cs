@@ -48,14 +48,15 @@ namespace PazhDataCollect
                // MessageBox.Show("2");
                 chbDate.CheckState = CheckState.Checked;
             }
-            if (Properties.Settings.Default.Digitz8 == true)
-            {
-                chbFormatDate.CheckState = CheckState.Checked;
-            }
-            else
-            {
-                chbFormatDate.CheckState = CheckState.Unchecked;
-            }
+            /*  if (Properties.Settings.Default.Digitz8 == true)
+              {
+                  chbFormatDate.CheckState = CheckState.Checked;
+              }
+              else
+              {
+                  chbFormatDate.CheckState = CheckState.Unchecked;
+              }*/
+            cbDateCharLen.Text = Properties.Settings.Default.Digitz8.ToString();
             mtxtDate.Text = Properties.Settings.Default.DaysBefore.ToString();
             //chbDate.CheckState = CheckState.Unchecked;
         }
@@ -234,7 +235,7 @@ namespace PazhDataCollect
                     i++;
                 }
                 txtSQL += " FROM " + cbLocal.Text;
-                string txt2SQL = " WHERE " + cbDateField.Text + "='" + UT.FN_FormatDate(DateTime.Now.AddDays(-1 * Convert.ToInt32(mtxtDate.Text)), chbDate.Checked, chbFormatDate.Checked) + "'";
+                string txt2SQL = " WHERE " + cbDateField.Text + "='" + UT.FN_FormatDate(DateTime.Now.AddDays(-1 * Convert.ToInt32(mtxtDate.Text)), chbDate.Checked, Convert.ToInt32(cbDateCharLen.Text)) + "'";
                 MessageBox.Show(txtSQL+txt2SQL);
                 txtLocalSQL.Text = txtSQL;
                 txtLocalDB.Text = cbLocal.Text;
@@ -277,10 +278,11 @@ namespace PazhDataCollect
                 Properties.Settings.Default.TarikhMiladi = true;
             else
                 Properties.Settings.Default.TarikhMiladi = false;
-            if (chbFormatDate.CheckState == CheckState.Checked)
+            Properties.Settings.Default.Digitz8 = Convert.ToInt32(cbDateCharLen.Text);
+           /* if (chbFormatDate.CheckState == CheckState.Checked)
                 Properties.Settings.Default.Digitz8 = true;
             else
-                Properties.Settings.Default.Digitz8 = false;
+                Properties.Settings.Default.Digitz8 = false;*/
             Properties.Settings.Default.DaysBefore =Convert.ToInt32( mtxtDate.Text);
             Properties.Settings.Default.ShopName = txtShopName.Text;
             Properties.Settings.Default.ShopID = txtShopID.Text;

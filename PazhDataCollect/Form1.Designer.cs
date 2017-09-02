@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainFrm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtLog = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtPass = new System.Windows.Forms.MaskedTextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
@@ -74,6 +75,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.txtStat = new System.Windows.Forms.Label();
             this.chbTimer = new System.Windows.Forms.CheckBox();
             this.button9 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -86,9 +89,6 @@
             this.Restore = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtStat = new System.Windows.Forms.Label();
-            this.txtLog = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -114,6 +114,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1039, 767);
             this.panel1.TabIndex = 0;
+            // 
+            // txtLog
+            // 
+            this.txtLog.Location = new System.Drawing.Point(7, 51);
+            this.txtLog.Multiline = true;
+            this.txtLog.Name = "txtLog";
+            this.txtLog.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtLog.Size = new System.Drawing.Size(1021, 96);
+            this.txtLog.TabIndex = 25;
             // 
             // panel6
             // 
@@ -208,6 +217,7 @@
             this.panel8.Controls.Add(this.groupBox3);
             this.panel8.Controls.Add(this.txtSQL);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel8.Enabled = false;
             this.panel8.Location = new System.Drawing.Point(0, 153);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1039, 614);
@@ -559,6 +569,25 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "تنظیمات مربوط به سرویس ویندوز برداشت اطلاعات";
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(227, 22);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(136, 39);
+            this.button8.TabIndex = 23;
+            this.button8.Text = "ذخیره در رجیستری";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // txtStat
+            // 
+            this.txtStat.AutoSize = true;
+            this.txtStat.Location = new System.Drawing.Point(26, 33);
+            this.txtStat.Name = "txtStat";
+            this.txtStat.Size = new System.Drawing.Size(45, 16);
+            this.txtStat.TabIndex = 22;
+            this.txtStat.Text = "txtStat";
+            // 
             // chbTimer
             // 
             this.chbTimer.AutoSize = true;
@@ -659,34 +688,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // txtStat
-            // 
-            this.txtStat.AutoSize = true;
-            this.txtStat.Location = new System.Drawing.Point(26, 33);
-            this.txtStat.Name = "txtStat";
-            this.txtStat.Size = new System.Drawing.Size(45, 16);
-            this.txtStat.TabIndex = 22;
-            this.txtStat.Text = "txtStat";
-            // 
-            // txtLog
-            // 
-            this.txtLog.Location = new System.Drawing.Point(7, 51);
-            this.txtLog.Multiline = true;
-            this.txtLog.Name = "txtLog";
-            this.txtLog.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtLog.Size = new System.Drawing.Size(1021, 96);
-            this.txtLog.TabIndex = 25;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(227, 22);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(136, 39);
-            this.button8.TabIndex = 23;
-            this.button8.Text = "ذخیره در رجیستری";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // mainFrm
             // 

@@ -128,7 +128,7 @@ namespace PazhDataCollect
                 }
             }
         }
-        public string FN_FormatDate(DateTime date,bool IsMiladi,bool Is8DigitFormat)
+        public string FN_FormatDate(DateTime date,bool IsMiladi,int DigitNumber)
         {
             string Cdate = "";
             PersianCalendar CLD = new PersianCalendar();
@@ -140,9 +140,14 @@ namespace PazhDataCollect
             {
                 Cdate += CLD.GetYear(date) + "/" + CLD.GetMonth(date).ToString().PadLeft(2, '0') + "/" + CLD.GetDayOfMonth(date).ToString().PadLeft(2, '0');
             }
-            if (Is8DigitFormat == true)
+            if (DigitNumber < 10)
             {
                 Cdate = Cdate.Remove(0, 2);
+            }
+            if (DigitNumber < 8)
+            {
+                Cdate = Cdate.Remove(5, 1);
+                Cdate = Cdate.Remove(2, 1);
             }
             return Cdate;
         }
@@ -153,7 +158,7 @@ namespace PazhDataCollect
             string ShopID = Properties.Settings.Default.ShopID;
             string DateField = Properties.Settings.Default.DateField;
             bool isMialdi = Properties.Settings.Default.TarikhMiladi;
-            bool is8Digit = Properties.Settings.Default.Digitz8;
+            int is8Digit = Properties.Settings.Default.Digitz8;
             string Cdate = FN_FormatDate(DateTime.Now.AddDays(DaysBefore * -1), isMialdi, is8Digit);
             string DBtable = Properties.Settings.Default.LocalDB;
             string SQL = Properties.Settings.Default.LocalSQL;

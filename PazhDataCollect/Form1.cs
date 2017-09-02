@@ -104,7 +104,7 @@ namespace PazhDataCollect
                 txtStat.Text = "0";
             }
 
-
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -277,9 +277,15 @@ namespace PazhDataCollect
         private void chbTimer_CheckedChanged(object sender, EventArgs e)
         {
             if (chbTimer.CheckState == CheckState.Checked)
+            {
                 Properties.Settings.Default.Enabled = true;
+                txtStat.Text = "1";
+            }
             else
+            {
                 Properties.Settings.Default.Enabled = false;
+                txtStat.Text = "0";
+            }
             Properties.Settings.Default.Save();
         }
 

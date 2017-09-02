@@ -38,8 +38,8 @@
     <Setting Name="TarikhMiladi" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Digitz8" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+    <Setting Name="Digitz8" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8</Value>
     </Setting>
     <Setting Name="LocalDB" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

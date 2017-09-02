@@ -169,10 +169,10 @@ namespace PazhDataCollect.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool Digitz8 {
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public int Digitz8 {
             get {
-                return ((bool)(this["Digitz8"]));
+                return ((int)(this["Digitz8"]));
             }
             set {
                 this["Digitz8"] = value;
