@@ -89,7 +89,7 @@ namespace PazhDataCollect
             List<string> TbList = new List<string>();
             using (CN)
             {
-                SqlCommand CMD = new SqlCommand("select TABLE_NAME AS Name from INFORMATION_SCHEMA.TABLESN);
+                SqlCommand CMD = new SqlCommand("select TABLE_NAME AS Name from INFORMATION_SCHEMA.TABLES", CN);
                 CN.Open();
                 SqlDataReader Reader = CMD.ExecuteReader();
                 if (Reader.HasRows)
