@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainFrm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtLog = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtPass = new System.Windows.Forms.MaskedTextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
@@ -75,6 +74,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button12 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.txtStat = new System.Windows.Forms.Label();
             this.chbTimer = new System.Windows.Forms.CheckBox();
@@ -89,7 +89,6 @@
             this.Restore = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button12 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -107,7 +106,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtLog);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -115,15 +113,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1039, 767);
             this.panel1.TabIndex = 0;
-            // 
-            // txtLog
-            // 
-            this.txtLog.Location = new System.Drawing.Point(7, 51);
-            this.txtLog.Multiline = true;
-            this.txtLog.Name = "txtLog";
-            this.txtLog.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtLog.Size = new System.Drawing.Size(1021, 96);
-            this.txtLog.TabIndex = 25;
             // 
             // panel6
             // 
@@ -338,7 +327,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(152, 52);
+            this.button1.Location = new System.Drawing.Point(13, 52);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(183, 39);
             this.button1.TabIndex = 16;
@@ -480,7 +469,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(152, 52);
+            this.button4.Location = new System.Drawing.Point(14, 52);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(183, 39);
             this.button4.TabIndex = 16;
@@ -570,6 +559,16 @@
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "تنظیمات مربوط به سرویس ویندوز برداشت اطلاعات";
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(113, 22);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(122, 39);
+            this.button12.TabIndex = 24;
+            this.button12.Text = "ذخیره در فایل";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button8
             // 
@@ -691,16 +690,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(113, 22);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(122, 39);
-            this.button12.TabIndex = 24;
-            this.button12.Text = "ذخیره در فایل";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -715,7 +704,6 @@
             this.Load += new System.EventHandler(this.mainFrm_Load);
             this.Resize += new System.EventHandler(this.mainFrm_Resize);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -798,7 +786,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox chbTimer;
         private System.Windows.Forms.Label txtStat;
-        private System.Windows.Forms.TextBox txtLog;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button12;
     }

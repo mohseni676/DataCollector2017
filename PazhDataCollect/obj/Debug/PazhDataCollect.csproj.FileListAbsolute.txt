@@ -14,3 +14,4 @@ C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\bin\Debug\PazhDa
 C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.TrustInfo.xml
 C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.exe.manifest
 C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.application
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.csprojResolveAssemblyReference.cache

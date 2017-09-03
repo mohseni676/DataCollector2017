@@ -89,7 +89,7 @@ namespace PazhDataCollect
             List<string> TbList = new List<string>();
             using (CN)
             {
-                SqlCommand CMD = new SqlCommand("select name from sys.tables union select name from sys.views", CN);
+                SqlCommand CMD = new SqlCommand("select TABLE_NAME AS Name from INFORMATION_SCHEMA.TABLESN);
                 CN.Open();
                 SqlDataReader Reader = CMD.ExecuteReader();
                 if (Reader.HasRows)
@@ -114,7 +114,7 @@ namespace PazhDataCollect
                 try
                 {
                     CN.Open();
-                    using (SqlDataAdapter DA = new SqlDataAdapter("select * from (select t1.name AS FieldName,t3.name as FieldType ,t1.max_length AS Length, t2.name AS TBName from sys.all_columns t1 inner join sys.all_objects t2 on t1.object_id=t2.object_id inner join sys.types t3 on t1.system_type_id= t3.system_type_id where (t2.object_id>0 and  t2.type_desc='USER_TABLE'  and t3.name<>'sysname' ) OR (t2.object_id>0 and  t2.type_desc='VIEW'  and t3.name<>'sysname')) tt where tt.tbname = '" + TbName+"'", CN))
+                    using (SqlDataAdapter DA = new SqlDataAdapter("select COLUMN_NAME AS FieldName,DATA_TYPE AS FieldType,CHARACTER_MAXIMUM_LENGTH AS Length from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME= '" + TbName+"'", CN))
                     {
                         DA.Fill(TbList);
 
