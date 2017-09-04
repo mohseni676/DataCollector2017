@@ -40,6 +40,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.button13 = new System.Windows.Forms.Button();
             this.txtBeforDays = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -70,7 +71,6 @@
             this.txtLDBUser = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtLPassword = new System.Windows.Forms.MaskedTextBox();
-            this.txtLServer = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -89,6 +89,7 @@
             this.Restore = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txtLServer = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -113,6 +114,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1039, 767);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel6
             // 
@@ -195,6 +197,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel8.Controls.Add(this.button13);
             this.panel8.Controls.Add(this.txtBeforDays);
             this.panel8.Controls.Add(this.label14);
             this.panel8.Controls.Add(this.pictureBox1);
@@ -212,6 +215,16 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1039, 614);
             this.panel8.TabIndex = 23;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(100, 448);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(122, 35);
+            this.button13.TabIndex = 25;
+            this.button13.Text = "بازیابی از فایل";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // txtBeforDays
             // 
@@ -244,7 +257,7 @@
             // lblCount
             // 
             this.lblCount.AutoSize = true;
-            this.lblCount.Location = new System.Drawing.Point(57, 461);
+            this.lblCount.Location = new System.Drawing.Point(12, 462);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(54, 16);
             this.lblCount.TabIndex = 27;
@@ -348,6 +361,7 @@
             // 
             this.txtDBUser.Location = new System.Drawing.Point(187, 23);
             this.txtDBUser.Name = "txtDBUser";
+            this.txtDBUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDBUser.Size = new System.Drawing.Size(109, 23);
             this.txtDBUser.TabIndex = 14;
             this.txtDBUser.Text = "sa";
@@ -367,6 +381,7 @@
             this.txtDBPassword.Location = new System.Drawing.Point(81, 23);
             this.txtDBPassword.Name = "txtDBPassword";
             this.txtDBPassword.PasswordChar = '*';
+            this.txtDBPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDBPassword.Size = new System.Drawing.Size(100, 23);
             this.txtDBPassword.TabIndex = 12;
             this.txtDBPassword.Text = "lemon7430";
@@ -376,6 +391,7 @@
             // 
             this.txtRserver.Location = new System.Drawing.Point(302, 23);
             this.txtRserver.Name = "txtRserver";
+            this.txtRserver.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtRserver.Size = new System.Drawing.Size(180, 23);
             this.txtRserver.TabIndex = 9;
             this.txtRserver.Text = "2.180.2.45";
@@ -392,7 +408,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(127, 452);
+            this.button11.Location = new System.Drawing.Point(228, 448);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(327, 35);
             this.button11.TabIndex = 26;
@@ -455,12 +471,12 @@
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.txtLServer);
             this.panel5.Controls.Add(this.button4);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.txtLDBUser);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.txtLPassword);
-            this.panel5.Controls.Add(this.txtLServer);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Location = new System.Drawing.Point(522, 25);
             this.panel5.Name = "panel5";
@@ -490,6 +506,7 @@
             // 
             this.txtLDBUser.Location = new System.Drawing.Point(187, 23);
             this.txtLDBUser.Name = "txtLDBUser";
+            this.txtLDBUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtLDBUser.Size = new System.Drawing.Size(109, 23);
             this.txtLDBUser.TabIndex = 14;
             this.txtLDBUser.Text = "sa";
@@ -509,19 +526,11 @@
             this.txtLPassword.Location = new System.Drawing.Point(81, 23);
             this.txtLPassword.Name = "txtLPassword";
             this.txtLPassword.PasswordChar = '*';
+            this.txtLPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtLPassword.Size = new System.Drawing.Size(100, 23);
             this.txtLPassword.TabIndex = 12;
             this.txtLPassword.Text = "lemon7430";
             this.txtLPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtLServer
-            // 
-            this.txtLServer.Location = new System.Drawing.Point(302, 23);
-            this.txtLServer.Name = "txtLServer";
-            this.txtLServer.Size = new System.Drawing.Size(180, 23);
-            this.txtLServer.TabIndex = 9;
-            this.txtLServer.Text = "2.180.2.45";
-            this.txtLServer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -690,6 +699,17 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // txtLServer
+            // 
+            this.txtLServer.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtLServer.FormattingEnabled = true;
+            this.txtLServer.Location = new System.Drawing.Point(303, 23);
+            this.txtLServer.Name = "txtLServer";
+            this.txtLServer.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtLServer.Size = new System.Drawing.Size(180, 21);
+            this.txtLServer.TabIndex = 17;
+            this.txtLServer.DropDown += new System.EventHandler(this.txtLServer_DropDown);
+            // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -754,7 +774,6 @@
         private System.Windows.Forms.TextBox txtLDBUser;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox txtLPassword;
-        private System.Windows.Forms.TextBox txtLServer;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -788,6 +807,8 @@
         private System.Windows.Forms.Label txtStat;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.ComboBox txtLServer;
     }
 }
 

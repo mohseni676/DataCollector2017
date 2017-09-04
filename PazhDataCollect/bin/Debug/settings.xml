@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<parentelement>
+  <DaysBefore>35</DaysBefore>
+  <LocalCN>Data Source=192.168.1.240;Initial Catalog=RzShopFullDpt_Db;User ID=sa;Password=lemon7430</LocalCN>
+  <StartDates>15</StartDates>
+  <FinalSQL />
+  <RemoteDB>TotalInvoicesTemp</RemoteDB>
+  <TarikhMiladi>False</TarikhMiladi>
+  <ShopName>سلبون</ShopName>
+  <RemoteSQL />
+  <RemoteCN>Data Source=192.168.1.240;Initial Catalog=BrandCityDB;User ID=sa;Password=lemon7430</RemoteCN>
+  <Digitz8>6</Digitz8>
+  <ShopID>C0002</ShopID>
+  <Interval>5</Interval>
+  <timer>600000</timer>
+  <LocalDB>ProductSell_Single_Header</LocalDB>
+  <LocalSQL>SELECT N'سلبون' AS ShopName , N'C0002' AS ShopID , CAST(HKey AS bigint) AS InvoiceSerial , CAST(FinalSum AS bigint) AS InvoiceTotal , CAST(InvoiceDate AS nvarchar(40)) AS InvoiceShamsiDate , CAST(InvoiceTime AS nvarchar(40)) AS InvoiceTime , CAST(InvoiceNo AS bigint) AS InvoiceID FROM ProductSell_Single_Header</LocalSQL>
+  <Enabled>False</Enabled>
+  <DateField>InvoiceDate</DateField>
+</parentelement><?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<DaysBefore>35</DaysBefore><?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<DaysBefore>35</DaysBefore>

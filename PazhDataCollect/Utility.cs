@@ -13,6 +13,7 @@ using System.Diagnostics;
 using System.IO;
 using Microsoft.Win32;
 using System.Configuration;
+using System.Xml;
 
 namespace PazhDataCollect
 {
@@ -65,23 +66,30 @@ namespace PazhDataCollect
             }
         }
 
-        public bool CheckServerAvailablity(string serverIPAddress)
+        public bool CheckServerAvailablity(string serverIPAddress,string user,string password)
         {
-            try
-            {
-                IPHostEntry ipHostEntry = Dns.Resolve(serverIPAddress);
-                IPAddress ipAddress = ipHostEntry.AddressList[0];
+            SqlConnectionStringBuilder cnstr = new SqlConnectionStringBuilder();
+            cnstr.DataSource = serverIPAddress;
+            cnstr.UserID = user;
+            cnstr.Password = password;
+            
+                using (SqlConnection cn = new SqlConnection(cnstr.ConnectionString))
+                {
+                try
+                {
+                    cn.Open();
+                    return true;
+                }
+                catch 
+                {
+                    return false;
+                }
 
-                TcpClient TcpClient = new TcpClient();
-                TcpClient.Connect(ipAddress, 1433);
-                TcpClient.Close();
 
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+                    
+                }
+            
+            
         }
         
         public List<string> FN_GetDBTableList(SqlConnection CN)
@@ -178,7 +186,7 @@ namespace PazhDataCollect
             string SQLtxt = FN_GetQueryString(DaysBefore);
             DataTable TbToTransfer = new DataTable();
             //check connection to local server
-            using (StreamWriter w = File.AppendText("log.txt"))
+            using (StreamWriter w = File.AppendText(@"c:\pazh-log.txt"))
             {
                 using (SqlConnection LocalCon = new SqlConnection(LocalCNStr))
             {
@@ -233,6 +241,7 @@ namespace PazhDataCollect
                     LCN.Open();
                     using (SqlBulkCopy Copy = new SqlBulkCopy(LCN))
                     {
+                        Copy.BulkCopyTimeout = 300;
                         Copy.DestinationTableName = Properties.Settings.Default.RemoteDB;
                         foreach (DataColumn col in TbToTransfer.Columns)
                         {
@@ -275,13 +284,62 @@ namespace PazhDataCollect
                 key.SetValue(p.Name, Properties.Settings.Default[p.Name].ToString());
             }
         }
+        public class TempFileStream : FileStream
+        {
+
+            public TempFileStream(Action<string> onClose)
+                : base(Path.GetTempFileName(), FileMode.OpenOrCreate, FileAccess.ReadWrite)
+            {
+                this.CloseDelegate = onClose;
+            }
+
+            protected Action<string> CloseDelegate
+            {
+                get;
+                set;
+            }
+
+            public override void Close()
+            {
+                base.Close();
+                if (File.Exists(this.Name))
+                {
+                    this.CloseDelegate(this.Name);
+                }
+            }
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         public void FN_WriteToStrFile()
         {
-            using (StreamWriter w = File.AppendText(Properties.Settings.Default.ShopID + ".cfg"))
+            /*  using (StreamWriter w = File.AppendText(Properties.Settings.Default.ShopID + ".cfg"))
+              {
+                  foreach (SettingsProperty p in Properties.Settings.Default.Properties)
+                  {
+                      w.WriteLine("{0} : {1};",p.Name, Properties.Settings.Default[p.Name].ToString());
+                  }
+              }*/
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+
+            using (StreamWriter tfs =   File.AppendText("settings.xml"))
+            using (XmlWriter writer = XmlWriter.Create(tfs, settings))
             {
-                foreach (SettingsProperty p in Properties.Settings.Default.Properties)
+                writer.WriteStartDocument(true);
+                writer.WriteStartElement("Settings");
+                //writer.wr
                 {
-                    w.WriteLine("{0} : {1};",p.Name, Properties.Settings.Default[p.Name].ToString());
+                    foreach (SettingsProperty p in Properties.Settings.Default.Properties)
+                    {
+                        writer.WriteStartAttribute(p.Name);
+                        writer.WriteValue(Properties.Settings.Default[p.Name]);
+                        writer.WriteEndAttribute();
+                    }
+
+                    writer.WriteEndElement();
+                    writer.WriteEndDocument();
                 }
             }
         }

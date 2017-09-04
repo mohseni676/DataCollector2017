@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.Sql;
+using System.Xml;
+using System.IO;
+using Microsoft.SqlServer.Management.Smo;
 namespace PazhDataCollect
 {
     public partial class mainFrm : Form
@@ -29,7 +32,7 @@ namespace PazhDataCollect
         {
             try
             {
-                if (UT.CheckServerAvailablity(txtRserver.Text.Trim()) == true)
+                if (UT.CheckServerAvailablity(txtRserver.Text.Trim(),txtDBUser.Text,txtDBPassword.Text) == true)
                 {
                     //MessageBox.Show("ارتباط با سرور بر قرار است.");
                     cbDBList.Items.Clear();
@@ -112,7 +115,7 @@ namespace PazhDataCollect
 
             try
             {
-                if (UT.CheckServerAvailablity(txtLServer.Text.Trim()) == true)
+                if (UT.CheckServerAvailablity(txtLServer.Text.Trim(),txtLDBUser.Text,txtLPassword.Text) == true)
                 {
                     //MessageBox.Show("ارتباط با سرور بر قرار است.");
                     cbLDBname.Items.Clear();
@@ -280,11 +283,13 @@ namespace PazhDataCollect
             {
                 Properties.Settings.Default.Enabled = true;
                 txtStat.Text = "1";
+                timer1.Enabled = true;
             }
             else
             {
                 Properties.Settings.Default.Enabled = false;
                 txtStat.Text = "0";
+                timer1.Enabled = false;
             }
             Properties.Settings.Default.Save();
         }
@@ -296,7 +301,45 @@ namespace PazhDataCollect
 
         private void button12_Click(object sender, EventArgs e)
         {
-            UT.FN_WriteToStrFile();
+            try
+            {
+                UT.FN_WriteToStrFile();
+                MessageBox.Show("ذخیره شد");
+            }catch (Exception er)
+            {
+                MessageBox.Show(er.Message);
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+        /*    string txt = "";
+            using (XmlReader xml = XmlReader.Create("settings.xml"))
+            {
+                while (xml.Read())
+                {
+                    if (xml.IsStartElement())
+                        if (xml.Name=="Settings")
+                            foreach(XmlAttribute at in xml.elemen)
+                    {
+                        txt +=  xml.Name + ":" + xml.Value.ToString()+"|"+xml.ValueType +"\r\n";
+                    }
+                   
+                }
+                MessageBox.Show(txt);
+            }*/
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtLServer_DropDown(object sender, EventArgs e)
+        {
+            DataTable sqls = SmoApplication.EnumAvailableSqlServers(true);
+            txtLServer.ValueMember = "Name";
+            txtLServer.DataSource = sqls;
         }
     }
 }

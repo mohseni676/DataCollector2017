@@ -15,3 +15,9 @@ C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDa
 C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.exe.manifest
 C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.application
 C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\obj\Debug\PazhDataCollect.csprojResolveAssemblyReference.cache
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\bin\Debug\Microsoft.SqlServer.Smo.dll
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\bin\Debug\Microsoft.SqlServer.Dmf.dll
+C:\Users\Mohseni\Source\Repos\DataCollector2017\PazhDataCollect\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
